@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingFragment">
+
+    <TextView
+        android:id="@+id/fragnotification"
+        android:layout_width="284dp"
+        android:layout_height="326dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="60dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="15dp"
+        android:text="This is setting fragment"
+        android:textSize="30sp" />
+
+</FrameLayout>
