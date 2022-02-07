@@ -35,18 +35,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //webViewSetup()
-        /*val viewPager = findViewById<ViewPager>(R.id.viewPager)
-        viewPager.adapter = PageAdapter(supportFragmentManager)*/
-
-        /*val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-        tabLayout.setupWithViewPager(viewPager)*/
-
-       /* recyclerView.layoutManager = LinearLayoutManager(this)
-        val items = fetchData()
-        val adapter: RecyclerAdapter = RecyclerAdapter(items)
-        recyclerView.adapter = adapter*/
-
 
         emailfab.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
@@ -97,17 +85,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    /*@RequiresApi(Build.VERSION_CODES.O)
-    @SuppressLint("SetJavaScriptEnabled")
-    private fun webViewSetup(){
-        webview.webViewClient= WebViewClient()
-
-        webview.apply {
-            loadUrl("https://www.google.com/")
-            settings.javaScriptEnabled = true
-            settings.safeBrowsingEnabled = true
-        }
-    }*/
 
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
@@ -121,13 +98,4 @@ class MainActivity : AppCompatActivity() {
         }
         super.onBackPressed()
     }
-
-    /*private fun fetchData(): ArrayList<String> {
-        val list = ArrayList<String>()
-        for(i in 0 until 100){
-            list.add("Item $i")
-        }
-        return list
-    }*/
-
 }
