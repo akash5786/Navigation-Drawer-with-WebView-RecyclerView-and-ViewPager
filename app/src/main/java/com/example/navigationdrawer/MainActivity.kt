@@ -17,7 +17,7 @@ import androidx.annotation.RequiresApi
 
 
 class MainActivity : AppCompatActivity() {
-    @RequiresApi(O)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
