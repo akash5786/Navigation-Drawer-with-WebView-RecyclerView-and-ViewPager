@@ -1,30 +1,19 @@
 package com.example.navigationdrawer
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.fragment_second.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DemoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondFragment : Fragment() {
-
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -40,33 +29,17 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_second, container, false)
+        return inflater.inflate(R.layout.fragment_second, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val data = ArrayList<ItemsView>()
         view.recylerView.layoutManager = LinearLayoutManager(activity)
-        val items = fetchData()
-        view.recylerView.adapter = RecyclerAdapter(items)
-        return view
-
-
-
-
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recylerView)
+        for (i in 1..100) {
+            data.add(ItemsView(R.drawable.dsc, "Item " + i))
+        }
+        recyclerView.adapter = RecyclerAdapter(data)
+        super.onViewCreated(view, savedInstanceState)
     }
-
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?): ArrayList<String> {
-        super.onViewCreated(view, savedInstanceState){
-            recylerView.apply {
-               layoutManager = LinearLayoutManager(this)
-                val
-                
-
-            }
-        }*/
-    }
-
-private fun fetchData(): ArrayList<String> {
-    val list = ArrayList<String>()
-    for(i in 0 until 100){
-        list.add("Item $i ")
-    }
-    return list
 }
